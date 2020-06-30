@@ -1,6 +1,6 @@
-# bloom-filter
+# Bloom Filter
 Python code that exports the implementation of a Bloom Filter. 
 
-Dependencies
+## Dependencies
 - Numpy
 - MMH3
