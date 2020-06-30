@@ -30,7 +30,6 @@ class BloomFilter():
 		for i in range(self.num_hashes):
 			hash_digest = mmh3.hash(word, i) % self.num_buckets
 			self.bucketData[hash_digest] = 1
-			print(hash_digest)
 
 
 	def false_positive_probability(self) -> float:
@@ -42,7 +41,7 @@ class BloomFilter():
 		"""
 
 		# Probability of a bit being 0 after one (1) insertion
-		prob_one_insertion 	 	 = 1 - (1 / self.num_buckets) ** self.num_hashes
+		prob_one_insertion 	 	 = (1 - (1 / self.num_buckets)) ** self.num_hashes
 
 		# Probability of all the k buckets (each hash) being 0 after n insertions
 		prob_multiple_insertions = prob_one_insertion ** self.additions
